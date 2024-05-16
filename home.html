@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Address Checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>IP Address Detector</h1>
+        <form id="user-details-form">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Enter your Name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Enter your Email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" placeholder="Enter your Phone Number" required>
+            </div>
+            <button type="submit" id="submit-details" class="submit-button">Submit</button>
+        </form>
+        <p id="ip-address">Loading...</p>
+        <button id="ip-details-button" style="display: none;" onclick="redirectToDetails()">Click here for IP Details</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

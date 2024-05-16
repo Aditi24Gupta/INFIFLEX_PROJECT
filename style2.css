@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:400");
+
+* {
+  box-sizing: border-box;
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 90deg;
+  inherits: true;
+}
+
+@property --gradX {
+  syntax: '<percentage>';
+  initial-value: 50%;
+  inherits: true;
+}
+
+@property --gradY {
+  syntax: '<percentage>';
+  initial-value: 0%;
+  inherits: true;
+}
+
+
+
+
+
+:root {
+  --d: 2500ms;
+  --angle: 90deg;
+  --gradX: 100%;
+  --gradY: 50%;
+  --c1: rgba(168, 239, 255, 1);
+  --c2: rgba(168, 239, 255, 0.1);
+}
+
+
+body {
+    font-family: 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("ip2.jpg");
+    background-size: cover;
+    background-position: center;
+    color: #090909; 
+    display: flex;
+  
+    height: 100vh; 
+}
+
+.container {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin: 20px 0 20px 20px; 
+    width: 60%;
+    height: 600px; 
+    border: 5px solid #f9f9f9; 
+    box-sizing: border-box;
+    margin: max(1rem, 3vw);
+    border: 0.35rem solid;
+    padding: 3vw;
+    border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
+    animation: borderRotate var(--d) linear infinite forwards;
+  
+}
+
+@keyframes borderRotate {
+    100% {
+      --angle: 420deg;
+    }
+  }
+  
+  @keyframes borderRadial {
+    20% {
+      --gradX: 100%;
+      --gradY: 50%;
+    }
+    40% {
+      --gradX: 100%;
+      --gradY: 100%;
+    }
+    60% {
+      --gradX: 50%;
+      --gradY: 100%;
+    }
+    80% {
+      --gradX: 0%;
+      --gradY: 50%;
+    }
+    100% {
+      --gradX: 50%;
+      --gradY: 0%;
+    }
+  }
+
+
+
+  
+  
+#map {
+    width: 450px; 
+    height: 350px;
+    position: relative;
+    
+    border-left: 1px solid #090909;
+    border-color: #0d0e0d;
+    border-radius: 10px 0 0 10px; 
+    border: 2px solid #141414;
+    margin-top: 120px; 
+    margin-left: 30px;
+    
+
+
+
+   
+}
+
+
+
+#location-details {
+    margin-top: 20px;
+    line-height: 1;
+    color: #f6f2f2;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid #f9f9f9; 
+   
+      
+
+     
+}
+
+.detail-box {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+    margin-bottom: 10px;
+}
+
+
+
+.heading-box {
+    background-color: #111111;
+    padding: 10px;
+    border-radius: 10px; 
+    border: 2px solid #f9f9f9; 
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #f0e6e6;
+}
+
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
